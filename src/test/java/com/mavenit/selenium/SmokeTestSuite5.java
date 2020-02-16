@@ -48,6 +48,7 @@ public class SmokeTestSuite5 extends Hooks{
 
 
        Thread.sleep(8000);
+       //anusha
 
        //adding another product
         List<WebElement> productWebElements2 = driver.findElements(By.cssSelector("a[data-test='component-product-card-title']"));
