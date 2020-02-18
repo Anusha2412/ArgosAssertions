@@ -1,29 +1,23 @@
 package com.mavenit.selenium;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import drivers.DriversFactory;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
 
 public class Hooks {
 
-    public static WebDriver driver;
+    DriversFactory factory = new DriversFactory();
 
     @Before //hooks
     public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.get("https://www.argos.co.uk/");
-        driver.manage().window().maximize();
-
+       factory.openBrowser();
+       factory.navigateTo("https://www.argos.co.uk/");
+        factory.maxiBrowser();
     }
-
-
    // @After  //hooks
-   // public void teardown() {
-    // driver.quit();
+   //public void teardown() {
+     //   factory.closeBrowser();
+   // }
 
     }
 

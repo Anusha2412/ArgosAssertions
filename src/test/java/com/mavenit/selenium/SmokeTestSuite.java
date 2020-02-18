@@ -1,9 +1,9 @@
 package com.mavenit.selenium;
 
+import pages.HomePage;
+import pages.ResultsPage;
+import pages.TrolleyPage;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
@@ -12,34 +12,27 @@ import static org.hamcrest.Matchers.*;
 
 public class SmokeTestSuite extends Hooks{
 
+    private HomePage homePage = new HomePage();
+    private TrolleyPage trolleyPage = new TrolleyPage();
+   private ResultsPage resultsPage = new ResultsPage();
+
     @Test
-
     public void searchTest(){
-        //Search
-        driver.findElement((By.id("searchTerm"))).sendKeys("puma");
-        driver.findElement((By.id("searchTerm"))).sendKeys(Keys.ENTER);
+        String searchTerm = "puma";
+        homePage.doSearch(searchTerm);
+        homePage.getCurrentUrl();
+        //to verify that we are looking for puma products by checking if the url has string "puma"
+       assertThat(homePage.getCurrentUrl(), endsWith(searchTerm));
 
-        //Asserts-1
-        //to varify that we are looking for puma products by checking if the url has string "puma"
-       String url =  driver.getCurrentUrl();
-       //assertThat(url, endsWith("puma"));
-       // assertThat(url, contains("Puma"));
-       assertThat("Not got results of search term. ", url, endsWith("puma"));
-
-       //Assert -2
-       //collect a item to list
-       //loop and verify
-       //product contains strings
-
-       List<WebElement>ProductWebElements = driver.findElements(By.cssSelector("a[data-test='component-product-card-title']"));
-       for (WebElement indProduct : ProductWebElements){
-           String actual = indProduct.getText();
-           assertThat(actual, containsString("Puma"));
+       //Assert -2, collect a item to list, loop and verify, product contains strings
+       List<String>actualProductList = resultsPage.getAllProductNames();
+       for(String product: actualProductList){
+           assertThat(product, containsString(searchTerm));
        }
 
        //Assert -3
-       String actualTitle =driver.findElement(By.className("search-title__term")).getText();
-       assertThat(actualTitle, is(equalToIgnoringCase("puma")));
+       String actualTitle =resultsPage.getActualTitle();
+       assertThat(actualTitle, is(equalToIgnoringCase(searchTerm)));
 
     }
 }
