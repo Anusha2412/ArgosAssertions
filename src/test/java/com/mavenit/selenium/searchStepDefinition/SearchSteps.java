@@ -43,8 +43,9 @@ public class SearchSteps {
     }
 
     @Then("^I should be able to see all \"([^\"]*)\"$")
-    public void i_should_be_able_to_see_all(String searchItem) {
+    public void i_should_be_able_to_see_all(String searchItem) throws InterruptedException {
         String actualTitle = resultsPage.getSearchTitle();
+        Thread.sleep(5000);
         List<String> allProductNames = resultsPage.getAllProductNames();
         assertThat(actualTitle.toUpperCase(), is(equalToIgnoringWhiteSpace(searchItem.toUpperCase())));
         for (String item : allProductNames) {
