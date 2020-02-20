@@ -1,8 +1,8 @@
 package com.mavenit.selenium;
 
+import cucumber.api.java.Before;
 import drivers.DriversFactory;
 import org.junit.After;
-import org.junit.Before;
 
 public class Hooks {
 

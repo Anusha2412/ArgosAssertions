@@ -20,7 +20,7 @@ import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.Is.is;
 
 
-    public class SmokeTestSuite4 extends Hooks {
+    public class SmokeTestSuite4 {
 
         private HomePage homePage = new HomePage();
         private TrolleyPage trolleyPage = new TrolleyPage();

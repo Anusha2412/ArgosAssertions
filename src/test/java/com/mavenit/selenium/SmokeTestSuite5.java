@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class SmokeTestSuite5 extends Hooks{
+public class SmokeTestSuite5 {
 
     HomePage homePage = new HomePage();
     ResultsPage resultsPage = new ResultsPage();
@@ -121,7 +121,5 @@ public class SmokeTestSuite5 extends Hooks{
        // int expectedNumber =(2);
         //assertThat(expectedNumber, is(equalTo(actualNumber)));
 
-
     }
-
 }

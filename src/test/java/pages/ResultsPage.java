@@ -36,7 +36,7 @@ public class ResultsPage extends DriversFactory {
         return productNamesList;
     }
 
-    public String getActualTitle() {
+    public String getSearchTitle() {
         return driver.findElement(By.className("search-title__term")).getText();
     }
 

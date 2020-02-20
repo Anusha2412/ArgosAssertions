@@ -10,7 +10,7 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class SmokeTestSuite extends Hooks{
+public class SmokeTestSuite {
 
     private HomePage homePage = new HomePage();
     private TrolleyPage trolleyPage = new TrolleyPage();
@@ -31,7 +31,7 @@ public class SmokeTestSuite extends Hooks{
        }
 
        //Assert -3
-       String actualTitle =resultsPage.getActualTitle();
+       String actualTitle =resultsPage.getSearchTitle();
        assertThat(actualTitle, is(equalToIgnoringCase(searchTerm)));
 
     }
