@@ -1,8 +1,7 @@
 package com.mavenit.selenium;
 
 import cucumber.api.java.Before;
-import drivers.DriversFactory;
-import org.junit.After;
+import com.mavenit.selenium.drivers.DriversFactory;
 
 public class Hooks {
 
@@ -13,6 +12,8 @@ public class Hooks {
        factory.openBrowser();
        factory.navigateTo("https://www.argos.co.uk/");
         factory.maxiBrowser();
+        factory.applyImplicitWaits();
+
     }
    // @After  //hooks
    //public void teardown() {
@@ -20,6 +21,7 @@ public class Hooks {
    // }
 
     }
+
 
 
 

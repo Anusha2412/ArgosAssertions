@@ -1,8 +1,8 @@
-package pages;
+package com.mavenit.selenium.pages;
 
-import drivers.DriversFactory;
+import com.mavenit.selenium.drivers.DriversFactory;
 import org.openqa.selenium.support.ui.Select;
-import utils.Helpers;
+import com.mavenit.selenium.utils.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

@@ -1,6 +1,6 @@
-package pages;
+package com.mavenit.selenium.pages;
 
-import drivers.DriversFactory;
+import com.mavenit.selenium.drivers.DriversFactory;
 import org.openqa.selenium.By;
 
 public class TrolleyPage extends DriversFactory {
