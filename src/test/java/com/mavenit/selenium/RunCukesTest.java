@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resource",
         dryRun = false,
         strict = false,
-        plugin = {"json:target/cucumber.json"}
+        plugin = {"json:target/cucumber-reports/CucumberTestReport.json"}
 )
 
 public class RunCukesTest {
