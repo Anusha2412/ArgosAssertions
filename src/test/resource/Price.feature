@@ -7,6 +7,6 @@ Feature: Price change
   Scenario: double the quantity of a product
     Given I am on homepage
     And I search for product adidas
-    And add to trolley
+    And add random product to trolley
     When I double the product quantity
     Then I should be able to see the price of the product get double

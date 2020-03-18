@@ -1,10 +1,10 @@
-package com.mavenit.selenium.searchStepDefinition;
+package com.mavenit.selenium.steps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pages.HomePage;
-import pages.ResultsPage;
+import com.mavenit.selenium.pages.HomePage;
+import com.mavenit.selenium.pages.ResultsPage;
 
 import java.util.List;
 

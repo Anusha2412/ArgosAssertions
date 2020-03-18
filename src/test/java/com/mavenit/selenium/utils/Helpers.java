@@ -1,4 +1,4 @@
-package utils;
+package com.mavenit.selenium.utils;
 
 import java.util.Random;
 

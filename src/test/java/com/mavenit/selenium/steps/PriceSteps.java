@@ -1,13 +1,13 @@
-package com.mavenit.selenium.searchStepDefinition;
+package com.mavenit.selenium.steps;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.hamcrest.MatcherAssert;
-import pages.HomePage;
-import pages.ResultsPage;
-import pages.TrolleyPage;
+import com.mavenit.selenium.pages.HomePage;
+import com.mavenit.selenium.pages.ResultsPage;
+import com.mavenit.selenium.pages.TrolleyPage;
 
 import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.equalTo;
@@ -26,11 +26,12 @@ public class PriceSteps {
     }
 
     @And("^I search for product adidas$")
-    public void i_search_for_product_adidas() {
+    public void i_search_for_product_adidas() throws InterruptedException {
         homePage.doSearch("adidas");
+        Thread.sleep(2000);
     }
 
-    @And("^add to trolley$")
+    @And("^add random product to trolley$")
     public void add_to_trolley() throws InterruptedException {
         trolleyPage.addToTrolley();
         Thread.sleep(1000);
